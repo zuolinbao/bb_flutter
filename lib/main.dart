@@ -1,11 +1,10 @@
 import 'package:bb_flutter/list_page/uo_list_page.dart';
 import 'package:flutter/material.dart';
-import 'package:fluwx_no_pay/fluwx_no_pay.dart';
 
 void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({Key key}) : super(key: key);
 
   // This widget is the root of your application.
   @override
@@ -25,7 +24,7 @@ class MyApp extends StatelessWidget {
       ),
       // home: const MyHomePage(title: 'Flutter Demo Home Page'),
       routes: <String, WidgetBuilder>{
-        '/': (BuildContext context) => UOListPage(),
+        '/': (BuildContext context) => MyHomePage(title: 'run'),
         // '/list_page': (BuildContext context) => UOListPage(),
       },
     );
@@ -33,7 +32,7 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key, required this.title}) : super(key: key);
+  const MyHomePage({this.title});
 
   // This widget is the home page of your application. It is stateful, meaning
   // that it has a State object (defined below) that contains fields that affect
@@ -53,24 +52,24 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   void initState() {
-    registerWxApi(
-        appId: "wxf45491387a104b84",
-        universalLink: "https://iotpservice.smartont.net/woapp/");
+    // registerWxApi(
+    //     appId: "wxf45491387a104b84",
+    //     universalLink: "https://iotpservice.smartont.net/woapp/");
     super.initState();
   }
 
   int _counter = 0;
 
   void share() {
-    shareToWeChat(
-        WeChatShareTextModel("east money", scene: WeChatScene.SESSION));
+    // shareToWeChat(
+    //     WeChatShareTextModel("east money", scene: WeChatScene.SESSION));
   }
 
   void openMiniP() {
     // shareToWeChat(WeChatShareMiniProgramModel(
     //         webPageUrl: "/", userName: "gh_2b7a2d07daad"))
     //     .then((value) => print("小程序分享${value}"));
-    launchWeChatMiniProgram(username: "gh_2b7a2d07daad");
+    // launchWeChatMiniProgram(username: "gh_2b7a2d07daad");
     // openMiniProgram(
     //     appId: "wxf45491387a104b84",
     //     path: "pages/index/index",

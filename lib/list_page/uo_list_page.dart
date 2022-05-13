@@ -4,7 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 
 class UOListPage extends StatefulWidget {
-  UOListPage({Key? key}) : super(key: key);
+  UOListPage({Key key}) : super(key: key);
 
   static const String routeName = '/list_page';
 
@@ -64,10 +64,7 @@ class _UOListPageState extends State<UOListPage> {
 
 class UOCameraCell extends StatelessWidget {
   final Map<String, dynamic> camera;
-  const UOCameraCell({
-    Key? key,
-    required this.camera,
-  }) : super(key: key);
+  const UOCameraCell({this.camera});
 
   @override
   Widget build(BuildContext context) {
